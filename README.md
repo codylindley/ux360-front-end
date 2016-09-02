@@ -1,4 +1,4 @@
- # UX360
+#UX360
 
 Client side code for the UX360 application as well as a NodeJS server for local development.
 
