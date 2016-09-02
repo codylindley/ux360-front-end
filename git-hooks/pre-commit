@@ -1,0 +1,8 @@
+#!/bin/sh
+PATH="/usr/local/bin:$PATH"
+grunt precommit
+if [ $? -ne 0 ]; then
+ echo "Grunt failed, please fix code and recommit"
+ exit 1
+fi
+exit 0

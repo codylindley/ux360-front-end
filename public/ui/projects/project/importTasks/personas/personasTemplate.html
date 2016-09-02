@@ -1,0 +1,11 @@
+<div class="list-group">
+{{#each .}}
+	<a class="list-group-item" {{#if checked}}style="font-weight:bold;background:#eee;"{{/if}} href="/#project/{{peso_id}}" data-peso_id="{{peso_id}}" title="{{peso_title}}">
+		{{#if checked}}
+			<span class="glyphicon glyphicon-pushpin pull-right"></span>
+		{{/if}}
+		<img class="peso-photo-xsmall" src="{{photo.cropped_path_small}}" alt="{{peso_title}}" />
+		{{peso_title}}
+	</a>
+{{/each}}
+</div>

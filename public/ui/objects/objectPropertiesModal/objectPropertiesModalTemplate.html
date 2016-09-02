@@ -1,0 +1,47 @@
+<form class="form-horizontal" role="form">
+
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h4 class="modal-title">Properties of "{{decodeUrl Name}}"</h4>
+	</div>
+
+	<div class="modal-body">
+
+		<div class="form-group">
+			<label for="" class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="objName" value="{{Name}}">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="col-sm-2 control-label">Description</label>
+			<div class="col-sm-10">
+				<textarea rows="3" class="form-control" id="objDescription" name="">{{Description}}</textarea>
+			</div>
+		</div>
+
+		{{#is ignore_workgroups undefined}}
+
+		<hr>
+
+		<h5>Assign to Work Groups:<br><small>Give access to this Affinity Group by designating which Work Groups have access to it.</small></h5>
+		<div style="overflow:auto; max-height:200px;">
+		<ul class="list-unstyled">
+			{{#each workgroups}}
+				<li><div class="checkbox"><label><input type="checkbox" {{#is associated 1}}checked="checked"{{/is}} data-id="{{id}}">{{name}}</label></div></li>
+			{{/each}}
+		</ul>
+		</div>
+		{{/is}}
+
+	</div>
+
+	<div class="modal-footer" style="text-align:left">
+
+			<button style="margin-left:10px;" class="btn btn-sm pull-right btn-primary ladda-button" data-spinner-color="#fff" data-style="zoom-out" type="button" id="saveObjProps"><span class="ladda-label">Save</span></button>
+
+		<button class="btn btn-sm pull-right" data-dismiss="modal" type="button">Cancel</button>
+
+	</div>
+
+</form>

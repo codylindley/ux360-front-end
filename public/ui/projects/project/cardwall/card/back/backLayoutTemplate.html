@@ -1,0 +1,31 @@
+<div class="flipper">
+	<div class="card-front"></div>
+	<div class="card-back">
+		<div class="card-back-header">
+			<div class="pull-right">
+				<div class="glyphicon glyphicon-remove btn-unflip"></div>
+			</div>
+			<div class="pull-left" data-view="headerView"></div>
+		</div>
+		<div class="card-back-main">
+			<div class="row">
+				<div class="col-sm-6" style="border-right:1px solid #ccc;padding-right:1em;">
+					<div data-view="detailsView"></div>
+					<div style="background:#ccc;height:1px;margin:20px 0;"></div>
+					<div data-view="personasView"></div>
+					<div style="background:#ccc;height:1px;margin:20px 0;"></div>
+					<div data-view="attachmentsView"></div>
+				</div>
+				<div class="col-sm-6">
+					<div data-view="commentsView" style="padding-right:1em;"></div>
+				</div>
+			</div>
+		</div>
+		<div class="card-back-footer">
+			<div class="pull-right">
+				<button class="btn btn-small btn-delete" type="button">Delete</button>
+				<button class="btn btn-small btn-default btn-unflip">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

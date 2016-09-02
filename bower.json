@@ -1,0 +1,54 @@
+{
+  "name": "UX360",
+  "version": "1.4.5",
+  "homepage": "https://github.com/TandemSeven/UX360",
+  "authors": [
+    "Cody Lindley <clindley@tandemseven.com>",
+    "Mundi Morgado <mundi@tandemseven.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "almond": "~0.2.9",
+    "backbone": "~1.1.2",
+    "handlebars": "~1.3.0",
+    "jquery.cookie": "~1.4.0",
+    "lodash": "2.4.1",
+    "requirejs-text": "~2.0.10",
+    "requirejs": "~2.1.14",
+    "requirejs-handlebars-plugin": "https://github.com/mundizzle/requirejs-handlebars-plugin.git#be01c7bcf5fb892aa4fb269ceca6108d993a99e7",
+    "jQuery.Maxlength": "https://github.com/pioul/jQuery.Maxlength.git",
+    "jquery.alphanum": "https://github.com/KevinSheedy/jquery.alphanum.git#~1.0.15",
+    "jQuery-Mask-Plugin": "https://github.com/igorescobar/jQuery-Mask-Plugin.git#~1.4.2",
+    "Autogrow-Textarea": "https://github.com/jevin/Autogrow-Textarea.git",
+    "bootstrap-switch": "https://github.com/nostalgiaz/bootstrap-switch.git#~1.9.0",
+    "nprogress": "~0.1.2",
+    "jquery-powertip": "https://github.com/codylindley/jquery-powertip.git#~1.2.1",
+    "ladda-bootstrap": "~0.1.0",
+    "bootstrap-growl": "~1.1.0",
+    "jquery-timer": "*",
+    "jquery": "1.11.1",
+    "jQuery.AjaxFileUpload.js": "https://github.com/jfeldstein/jQuery.AjaxFileUpload.js.git",
+    "bootstrap-modal": "2.2.5",
+    "bootstrap": "3.1.1",
+    "jQuery-vGrid-Plugin": "https://github.com/codylindley/jQuery-vGrid-Plugin.git#~0.1.11",
+    "jquery-easing": "https://github.com/danro/jquery-easing.git",
+    "imagesloaded": "~3.1.4",
+    "spinjs": "~2.0.0",
+    "momentjs": "~2.6.0",
+    "require-css": "0.1.1",
+    "jquery-ui": "https://github.com/jquery/jquery-ui.git#1.11.0-beta.2",
+    "consolelog": "~2.0.1"
+  },
+  "resolutions": {
+    "jquery": "1.11.1",
+    "bootstrap": "~3.1.1"
+  }
+}

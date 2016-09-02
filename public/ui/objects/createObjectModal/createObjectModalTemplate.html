@@ -1,0 +1,57 @@
+
+	<div class="modal-header" style="position:relative; z-index:3">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeCreateObjectModal">&times;</button>
+
+		{{#if is_container}}
+		<button class="btn btn-primary btn-xs pull-right" disabled="disabled" id="showObjectModalSubCreateUI" data-type="{{type_child}}">add {{type_child}}</button>
+		<button class="btn btn-primary btn-xs pull-right" id="showObjectModalSubCreateUI" data-type="{{type_parent}}">add {{buttonTitle_parent}}</button>
+		<input type="hidden" name="is_container" id="is_container" value="1"/>
+		<input type="hidden" name="container_child" id="container_child" value="{{type_child}}"/>
+		<h4 class="modal-title">add {{buttonTitle_parent}}</h4>
+		{{else}}
+		<button class="btn btn-primary btn-xs pull-right" disabled="disabled" id="removeObjectFromTree">delete</button>
+		<button class="btn btn-primary btn-xs pull-right" id="showObjectModalSubCreateUI" data-type="{{type_parent}}">add {{type_parent}}</button>
+		<h4 class="modal-title">add/arrange {{type_parent}}</h4>
+		{{/if}}
+	</div>
+
+	<div id="createObjectModalSubCreateUI">
+		<div id="subCreateUIpanel" class="clearfix">
+		<form class="form-horizontal modalForm" role="form">
+		<div class="form-group">
+			<label class="col-sm-2 control-label"></label>
+			<div class="col-sm-10" id="addTitle">add a <span></span></div>
+		</div>
+		<div class="form-group">
+			<label for="prjt_name" class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" autofocus="" class="form-control" id="objectNameVal" placeholder="Name (required)">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="prjt_description" class="col-sm-2 control-label">Description</label>
+			<div class="col-sm-10">
+				<textarea style="height:50px;" class="form-control" id="objectDescriptionVal" name="prjt_description" placeholder="Description (optional)"></textarea>
+			</div>
+		</div>
+			<button class="btn btn-sm pull-right btn-success ladda-button" data-spinner-color="#fff" data-style="zoom-out" type="button" id="createObjectBtnAndClose" data-type=""><span class="ladda-label">save and close</span></button>
+
+			<button class="btn btn-sm pull-right btn-success ladda-button" data-spinner-color="#fff" data-style="zoom-out" type="button" id="createObjectBtn" data-type=""><span class="ladda-label">save and add another</span></button>
+
+			<button class="btn btn-default btn-sm pull-right" type="button" id="hideObjectModalSubCreateUI">Cancel</button>
+
+			</form>
+		</div>
+
+	</div>
+
+	<div class="modal-body" style="position:relative; z-index:0">
+
+		<div id="arrangeTree" {{#if is_container}}{{else}}class="moveCursor"{{/if}} style="overflow:hidden"></div>
+
+	</div>
+
+
+
+
+

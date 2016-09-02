@@ -1,0 +1,16 @@
+<div class="card-toolbar pull-right">
+	<span class="flip-card glyphicon glyphicon-share-alt" data-toggle="tooltip" title="Details"></span>
+	<span class="new-card glyphicon glyphicon-plus" data-toggle="tooltip" title="New"></span>
+	<span class="delete-card glyphicon glyphicon-remove" data-toggle="tooltip" title="Delete"></span>
+</div>
+
+<div class="card-header">{{stry_name}}</div>
+
+<div class="card-statusbar">
+	<span class="badge pull-right" data-toggle="tooltip" title="{{persona_count}} associated personas"><span class="glyphicon glyphicon-user"></span>{{persona_count}}</span>
+	{{#if status}}
+	<span class="badge"><span class="glyphicon glyphicon-ok"></span></span>
+	{{/if}}
+	<span class="badge {{hasAgileComments comment_count_agile}}" data-toggle="tooltip" title="{{comment_count}} comments"><span class="glyphicon glyphicon-comment"></span>{{comment_count}}</span>
+	<span class="badge" data-toggle="tooltip" title="{{attachment_count}} attachments"><span class="glyphicon glyphicon-file"></span>{{attachment_count}}</span>
+</div>

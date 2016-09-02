@@ -1,0 +1,30 @@
+<h4>
+	Attachments
+</h4>
+
+<form class="form-attachments">
+
+	<input type="file" class="input-file-upload" name="file" id="file" />
+	<br />
+	<button type="submit" class="btn btn-default">Upload</button>
+
+</form>
+
+<div style="background:#ccc;height:1px;margin:20px 0;"></div>
+
+{{#if this.attachments.length}}
+	{{#each attachments}}
+		<div class="col-sm-8">
+			<b>
+				<a href="{{path}}" target="_blank">{{uxme_name}}</a>
+			</b>
+			<br />
+			<i style="color:#666; font-size:11px">{{formatDate update_date}}</i>
+		</div>
+		<div class="col-sm-4">
+			<a href="#" data-uxme_id="{{uxme_id}}" class="delete-attachment">Delete</a>
+		</div>
+	{{/each}}
+{{else}}
+	<i style="color:#666">(no attachments)</i>
+{{/if}}

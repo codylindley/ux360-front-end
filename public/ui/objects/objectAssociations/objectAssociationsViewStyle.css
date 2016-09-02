@@ -1,0 +1,51 @@
+.objectAssociationsView .page-header {
+	padding-bottom:0;
+	margin-bottom: 13px;
+	margin-top: 40px;
+}
+
+.objectAssociationsView .page-header h5{
+	margin-bottom: 10px;
+}
+
+.objectAssociationsView #assAccordion .panel-heading{
+	cursor: pointer;
+}
+
+.objectAssociationsView #assAccordion .panel-heading:hover{
+	color: #333;
+	border-color: #adadad;
+	background-color: #e0e0e0;
+	background-position: 0 -15px;
+}
+
+.k-treeview .k-checkbox {
+vertical-align: baseline;
+}
+
+.k-treeview .k-in {
+padding: 3px; 
+}
+
+#treeSort{
+	float: right;
+}
+
+#treeFilter{
+	float: right;
+	width:200px;
+}
+
+#treeBtnOr{
+	margin: 0 7px;
+	float: right;
+	line-height: 2.2em;
+}
+
+.objectAssociationsView .k-item .k-in.k-state-focused{
+	box-shadow: none !important;
+}
+
+.objectAssociationsView .k-treeview span.k-in:hover, .objectAssociationsView .k-treeview span.k-in{
+	cursor: pointer !important;
+}

@@ -1,0 +1,94 @@
+
+/* LOCAL ENV: this is a hack around bootstrap for now... */
+@font-face {
+  font-family: 'Dizzlings';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot');
+  src: url('/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.glyphicon::before {
+  font-family: 'Dizzlings';
+}
+
+/* LIFERAY ENV: this is a hack around bootstrap for now... */
+@font-face {
+  font-family: 'Lifelings';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/UX360-theme/UX360/public/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot');
+  src: url('/UX360-theme/UX360/public/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/UX360-theme/UX360/public/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/UX360-theme/UX360/public/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/UX360-theme/UX360/public/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.liferay .glyphicon::before {
+  font-family: 'Lifelings';
+}
+
+.modal-header {
+  background: #f5f5f5;
+  border-radius: 4px 4px 0 0;
+}
+
+.modal-footer{
+  margin-top: 0;
+}
+
+.form-group:last-child{
+  margin-bottom: 0;
+}
+
+body .badge {
+  background-color: #C0C0C0;
+}
+
+body .nav-pills > li.active > a,
+body .nav-pills > li.active > a:hover,
+body .nav-pills > li.active > a:focus {
+  background-color: #C0C0C0;
+  color: #333;
+  font-weight: bold;
+}
+
+.maxlength{
+  font-size: 11px;
+  color: #99999F;
+  margin-top:5px;
+  padding-left:2px;
+}
+
+/*!
+ * Bootstrap Modal
+ *
+ * Copyright Jordan Schroter
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Boostrap 3 patch for for bootstrap-modal. Include BEFORE bootstrap-modal.css!
+ */
+
+body.modal-open, 
+.modal-open .navbar-fixed-top, 
+.modal-open .navbar-fixed-bottom {
+  margin-right: 0;
+}
+
+.modal {
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  padding: 0;
+  width: 500px;
+  margin-left: -250px;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+}
+
+.modal.container {
+  max-width: none;
+}
+

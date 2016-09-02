@@ -1,0 +1,151 @@
+<!--
+	This Handlebars template outputs a Kendo UI template,
+	so expect a mix of Handlebars/Kendo UI template tags.
+-->
+<tr data-uid="#= uid #" class="k-master-row">
+	<!--
+		Only add when we are sure the grid has child grid.
+	-->
+	{{#if hasChildGrid}}
+		<td class="k-hierarchy-cell">
+			<a href="\#" class="k-icon k-plus"></a>
+		</td>
+	{{/if}}
+	<!--
+		Match columns to data variable for Kendo UI
+		templates, this output/template sent to Kendo grid.
+	-->
+	{{#each data}}
+		{{#is this.field 'Edit'}}
+			<td>
+				<a
+					type="button"
+					class="btn btn-default btn-xs editObject"
+					data-type="#= type #"
+					data-object-name="#= Name #"
+					data-object-id="#= id #"
+				><span class="glyphicon glyphicon-edit"></span></a>
+			</td>
+  	{{/is}}
+  	{{#is this.field 'Actions'}}
+			<td>
+				<div class="dropdown">
+					<button type="button" class="btn btn-default dropdown-toggle btn-xs" data-dd-id="#= id #">
+						<span class="glyphicon glyphicon-cog"></span>
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" data-dd-id="#= id #">
+						#if(Permission === 'Author'){#
+							{{#each this.actions.Author}}
+								{{#is event 'divider'}}
+									<li class="divider"></li>
+								{{else}}
+									{{#is event 'object_delete'}}
+										#if(deletable){#
+											<li>
+												<a
+													href="\#"
+													data-content="
+														<button
+															type='button'
+															class='btn btn-danger ladda-button btn-block btn-sm deleteObject'
+															data-spinner-color='\#fff'
+															data-style='zoom-out'
+															data-type='#= type #'
+															data-object-id='#= id #'
+														>Yes</button>
+													"
+													class="{{event}}"
+												>{{title}}</a>
+											</li>
+										#}#
+									{{else}}
+										<li>
+											<a
+												href="{{#if url}}{{url}}{{else}}{{/if}}"
+												data-type="#= type #"
+												class="{{event}}"
+												data-object-id="#= id #"
+												data-object-name="#= Name #"
+											>{{title}}</a>
+										</li>
+									{{/is}}
+								{{/is}}
+							{{/each}}
+						#}else{#
+							{{#each this.actions.Collaborator}}
+								{{#is event 'divider'}}
+									<li class="divider"></li>
+								{{else}}
+									<li>
+										<a href=""
+											data-type="#= type #"
+											class="{{event}}"
+											data-object-id="#= id #"
+										>{{title}}</a>
+									</li>
+								{{/is}}
+							{{/each}}
+						#}#
+					</ul>
+				</div>
+			</td>
+		{{/is}}
+		{{#is displayType 'Image'}}
+	  	{{#if this.hidden}}
+				#if({{this.field}}){#
+					<td style="display:none">
+						<img src="#= {{this.field}}.path_small #" style="max-height:40px" alt="" />
+					</td>
+	      #}else{#
+					<td style="display:none"></td>
+				#}#
+			{{else}}
+				#if({{this.field}}){#
+					<td>
+						<img src="#= {{this.field}}.path_small #" style="max-height:40px" alt="" />
+					</td>
+				#}else{#
+					<td>
+						&nbsp;
+					</td>
+				#}#
+			{{/if}}
+		{{/is}}
+		{{#isnt this.field 'Edit'}}
+			{{#isnt this.field 'Actions'}}
+				{{#isnt displayType 'Image'}}
+					{{#if this.clickable}}
+						{{#if this.hidden}}
+							<td style="display:none">
+								<a
+									href="{{this.url}}"
+									data-object-id="#= id #"
+									class="linkToPersona"
+								>#: window.decodeURIComponent({{this.field}}).replace(/\+/g, " ")#</a>
+							</td>
+						{{else}}
+				    	<td>
+				    		<a
+				    			href="{{this.url}}"
+				    			data-object-id="#= id #"
+				    			class="linkToPersona"
+				    		>#: window.decodeURIComponent({{this.field}}).replace(/\+/g, " ")#</a>
+				    	</td>
+						{{/if}}
+					{{else}}
+						{{#if this.hidden}}
+							<td style="display:none">
+								#: window.decodeURIComponent({{this.field}}).replace(/\+/g, " ")#
+							</td>
+						{{else}}
+				    	<td>
+				    		#: window.decodeURIComponent({{this.field}}).replace(/\+/g, " ")#
+				    	</td>
+						{{/if}}
+					{{/if}}
+				{{/isnt}}
+			{{/isnt}}
+		{{/isnt}}
+	{{/each}}
+</tr>

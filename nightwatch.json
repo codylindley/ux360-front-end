@@ -1,0 +1,83 @@
+{
+  "src_folders": [
+    "tests/"
+  ],
+  "selenium": {
+    "start_process": false,
+    "host": "hub.browserstack.com",
+    "port": 80
+  },
+  "test_settings": {
+    "default": {
+      "launch_url": "http://hub.browserstack.com",
+      "selenium_port": 80,
+      "selenium_host": "hub.browserstack.com",
+      "silent": true,
+      "screenshots": {
+        "enabled": false,
+        "path": ""
+      },
+      "desiredCapabilities": {
+        "browserstack.debug": "true",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "resolution": "1280x1024",
+        "webStorageEnabled":true,
+        "browserstack.user": "clindley@tandemseven.com",
+        "browserstack.key": "qbEz9mnzYQxccjXP5fhY"
+      }
+    },
+    "ie11": {
+      "desiredCapabilities": {
+        "browserName": "internet explorer",
+        "version": "11",
+        "browserstack.debug": "true",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "resolution": "1280x1024",
+        "webStorageEnabled":true,
+        "browserstack.user": "clindley@tandemseven.com",
+        "browserstack.key": "qbEz9mnzYQxccjXP5fhY"
+      }
+    },
+    "ie10": {
+      "desiredCapabilities": {
+        "browserName": "internet explorer",
+        "version": "10",
+        "browserstack.debug": "true",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "resolution": "1280x1024",
+        "webStorageEnabled":true,
+        "browserstack.user": "clindley@tandemseven.com",
+        "browserstack.key": "qbEz9mnzYQxccjXP5fhY"
+      }
+    },
+    "ie9": {
+      "desiredCapabilities": {
+        "browserName": "internet explorer",
+        "version": "9",
+        "browserstack.debug": "true",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "resolution": "1280x1024",
+        "webStorageEnabled":true,
+        "browserstack.user": "clindley@tandemseven.com",
+        "browserstack.key": "qbEz9mnzYQxccjXP5fhY"
+      }
+    },
+    "ie8": {
+      "desiredCapabilities": {
+        "browserName": "internet explorer",
+        "version": "ie8",
+        "browserstack.debug": "true",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "resolution": "1280x1024",
+        "webStorageEnabled":true,
+        "browserstack.user": "clindley@tandemseven.com",
+        "browserstack.key": "qbEz9mnzYQxccjXP5fhY"
+      }
+    }
+  }
+}

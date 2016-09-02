@@ -1,0 +1,7 @@
+/*
+- We use mocha BDD style interface
+- mocha, expect, jquery, log(), and sinon are all in the global scope
+- mocha provides before(), after(), beforeEach(), afterEach() to create fixtures use them
+- Views testing = test instantiation, events, methods, and proper setup of el
+- Models & Collections testing = test instantiation with data, methods, and events
+*/

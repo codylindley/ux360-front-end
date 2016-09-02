@@ -1,0 +1,15 @@
+<div id="editModeSwitch">
+	{{#if canEdit}}
+		<div id="editModeSwitchPos">
+		<label class="label-change-switch" style="font-weight:normal;font-size:13px;">edit attributes:
+		<div class="switch-mini" id="editModeSwithBtn" data-on="success" data-off="default">
+		    <input type="checkbox">
+		</div>
+		</label>
+		</div>
+	{{else}}
+		<div class="alert alert-warning">
+		<strong>Locked!</strong> Currently being edited by another user. You can still view data just not edit it.
+		</div>
+	{{/if}}
+</div>

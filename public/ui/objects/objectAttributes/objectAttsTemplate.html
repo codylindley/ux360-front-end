@@ -1,0 +1,134 @@
+<h2 style="min-height:33px">{{objectName}}</h2>
+
+<div class="page-header">
+  <h5>Attributes</h5>
+</div>
+
+<div class="panel-group" id="attsAccordion" style="clear:both">
+{{#if collection.Categories}}
+	{{#each collection.Categories}}
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<a data-toggle="collapse" data-parent="#attsAccordion" data-target="#collapse{{@index}}">
+					{{decodeUrl Name}}
+					</a>
+				</h3>
+			</div>
+			<div id="collapse{{@index}}" class="panel-collapse collapse">
+			<div class="panel-body">
+				{{#each Categories}}
+					
+					<form class="form-horizontal" role="form">
+					<h3 ><small>{{decodeUrl Name}}:</small></h3>
+					<hr>
+
+					{{#each Fields}}
+						{{#is cact_fieldtypetitle 'Entry field'}}
+							<div class="form-group">
+							<label class="col-sm-2 control-label">{{cact_fieldlabel}}:</label>
+								<div class="col-sm-10">
+								<input class="form-control" data-cact-id="{{cact_id}}" data-id="{{#if Data.id}}{{Data.id}}{{else}}0{{/if}}" disabled type="{{attsInputType cact_fielddatatypetitle}}" value="{{#if Data.value}}{{Data.value}}{{/if}}" {{#if cact_maxlength}}maxlength="{{cact_maxlength}}"{{/if}} {{#if cact_size}}style="width:{{cact_size}}px"{{/if}} />
+								</div>
+							</div>
+						{{/is}}
+
+						{{#is cact_fieldtypetitle 'Dropdown'}}
+							<div class="form-group">
+								<label class="col-sm-2 control-label">{{cact_fieldlabel}}:</label>
+								<div class="col-sm-10">
+									<select class="form-control" disabled data-id="{{#if Data.id}}{{Data.id}}{{else}}0{{/if}}" data-cact-id="{{cact_id}}">
+										<option value="" {{#is Data.value undefiend}}selected{{/is}}>No Selection Yet</option>
+										{{#each Options}}
+										<option value="{{this.ccop_option}}" {{#if ../Data.value}}{{#is ../this/../Data.value this.ccop_option}}selected{{/is}}{{/if}}>{{this.ccop_option}}</option>
+										{{/each}}
+									</select>
+								</div>
+							</div>
+						{{/is}}
+
+						{{#is cact_fieldtypetitle 'Text Area'}}
+							<div class="form-group">
+								<label class="col-sm-2 control-label">{{cact_fieldlabel}}:</label>
+								<div class="col-sm-10">
+									<textarea data-cact-id="{{cact_id}}" data-id="{{#if Data.id}}{{Data.id}}{{else}}0{{/if}}" disabled class="form-control" {{#if cact_maxrows}}rows="{{cact_cact_maxrows}}"{{else}}rows="3"{{/if}} {{#if cact_maxlength}}maxlength="{{cact_maxlength}}"{{/if}}>{{#if Data.value}}{{Data.value}}{{/if}}</textarea>
+								</div>
+							</div>
+						{{/is}}
+
+						{{#is cact_fieldtypetitle 'Radio Button'}}
+							<div class="form-group">
+								<label class="col-sm-2 control-label">{{cact_fieldlabel}}:</label>
+								<div class="col-sm-10">
+									{{#each Options}}
+										<label class="radio-inline">
+										<input data-cact-id="{{../this/../cact_id}}" data-id="{{#if ../Data.id}}{{../this/../Data.id}}{{else}}0{{/if}}" name="{{../this/../cact_fieldname}}" type="radio" disabled value="{{this.ccop_option}}" {{#if ../Data.value}}{{#is ../this/../Data.value this.ccop_option}}checked{{/is}}{{/if}}/>{{this.ccop_option}}
+										</label>
+									{{/each}}
+								</div>
+							</div>
+						{{/is}}
+
+						{{#is cact_fieldtypetitle 'Checkbox'}}
+							<div class="form-group">
+							<label class="col-sm-2 control-label">{{cact_fieldlabel}}:</label>
+							<div class="col-sm-10">
+								{{#each Options}}
+									<label class="checkbox-inline">
+									<input data-cact-id="{{../this/../cact_id}}" data-id="{{#if ../Data.id}}{{../this/../Data.id}}{{else}}0{{/if}}" disabled type="checkbox" value="{{this.ccop_option}}" {{#if ../Data.value}}{{#attsCheckboxs ../this/../Data.value this.ccop_option}}{{/attsCheckboxs}}{{/if}}/>{{this.ccop_option}}
+									</label>
+								{{/each}}
+							</div>
+							</div>	
+						{{/is}}
+
+						{{#is cact_fieldtypetitle 'Image'}}
+							<div class="form-group">
+								<label class="col-sm-2 control-label">{{cact_fieldlabel}}:</label>
+								<div class="col-sm-10">
+									<div data-cact-id="{{cact_id}}" class="attsImage">
+
+									<table data-cact-id="{{cact_id}}" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>
+
+										<img src="{{#if Data.path_small}}{{Data.path_small}}{{else}}http://placehold.it/200x133{{/if}}" data-default-img="http://placehold.it/200x133" alt="{{name}}" class="img-thumbnail pull-left" />
+
+										</td>
+										<td valign="middle">
+										
+										<div style="position:relative; margin-bottom: 10px;">
+										<label class="inputFileIEHack"><input name="file" type="file" class="uploadFile" data-id="{{#if Data.id}}{{Data.id}}{{else}}0{{/if}}" /></label>
+
+										<button data-spinner-color="#000" data-style="zoom-out" type="button" class="btn btn-default btn-sm changePhoto ladda-button" disabled data-id="{{#if Data.id}}{{Data.id}}{{else}}0{{/if}}" >upload image</button>
+										</div>
+
+										<button data-spinner-color="#000" data-style="zoom-out" type="button" class="btn btn-default btn-sm stockPhoto ladda-button" data-target="#stockPhotosModal" data-id="{{#if Data.id}}{{Data.id}}{{else}}0{{/if}}" disabled>stock image</button>
+
+										<button data-spinner-color="#000" data-style="zoom-out" type="button" class="btn btn-default btn-sm deletePhoto ladda-button" disabled {{#unless Data.path_small}}style="display:none"{{/unless}}>delete</button>
+
+										</td>
+										
+									</tr>
+									</table>
+
+									</div>
+								</div>
+							</div>
+						{{/is}}
+
+					{{/each}}
+					</form>
+				{{/each}}
+			</div>
+			</div>
+		</div>
+
+	{{/each}}
+</div>
+{{else}}
+	<div class="alert alert-warning">
+		<span class="glyphicon glyphicon-warning-sign"></span> no attributes for this object type
+	</div>
+{{/if}}

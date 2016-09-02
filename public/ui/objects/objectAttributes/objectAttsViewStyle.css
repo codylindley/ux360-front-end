@@ -1,0 +1,116 @@
+.attsDisabledCover {
+	position:absolute;
+	background-color: transparent;
+	z-index: 10000000;
+	margin-top: -15px;
+	margin-left: -15px;
+}
+
+.inputFileIEHack {
+	display: none;
+}
+
+.lt-ie10 .inputFileIEHack,
+.lt-ie9 .inputFileIEHack,
+.k-ie10 .inputFileIEHack {
+	position: absolute;
+	height: 32px;
+	top:-1px;
+	left:-163px;
+	z-index: 1000000;
+ 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+ 	opacity: 0;
+	display: block !important;
+	cursor: pointer;
+}
+
+.lt-ie10 .inputFileIEHack input,
+.lt-ie9 .inputFileIEHack input,
+.k-ie10 .inputFileIEHack input {
+	height: 32px;
+	cursor: pointer;
+}
+/*
+.lt-ie9 .inputFileIEHack {
+	position: absolute;
+	top:0;
+	left:0;
+	height: 32px;
+	z-index: 1000000;
+	display: block !important;
+	cursor: pointer;
+}
+
+.lt-ie9 .inputFileIEHack input {
+	height: 32px;
+	cursor: pointer;
+}*/
+
+.attsDisabledCover:hover {
+	background-color: #9BBDD0;
+	opacity: 0.2;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	cursor: pointer;
+}
+
+.attsImage img {
+	float:left;
+	margin-right: 10px;
+}
+
+.attsImage button {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.attsImage button:last-child {
+	display: block;
+	margin-bottom: 0;
+}
+
+.objectAttributesView h2 {
+	margin-top: 20px;
+}
+
+.objectAttributesView .page-header {
+	padding-bottom:0;
+	margin-bottom: 13px;
+	margin-top: 20px;
+}
+
+.objectAttributesView .page-header h5 {
+	margin-bottom: 10px;
+}
+
+.objectAttributesView #attsAccordion .form-group:last-child {
+	margin-bottom:50px;
+}
+
+.objectAttributesView #attsAccordion .panel-heading {
+	cursor: pointer;
+}
+
+.objectAttributesView #attsAccordion .panel-heading:hover {
+	color: #333;
+	border-color: #adadad;
+	background-color: #e0e0e0;
+	background-position: 0 -15px;
+}
+
+#powerTipSaving {
+	cursor: default;
+	background-color: #000;
+	opacity: 0.5;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	color: #fff;
+	display: none;
+	padding: 3px 10px;
+	position: absolute;
+	white-space: nowrap;
+	z-index: 2147483647;
+	font-size: 11px;
+	border-left: 1px solid #d1d1d1;
+	border-right: 1px solid #d1d1d1;
+	border-bottom: 1px solid #d1d1d1;
+}

@@ -1,0 +1,36 @@
+.objectGridView{
+	margin-top:20px;
+}
+
+.objectGridView #gridLoader .spinner{
+	margin-top: 100px;
+}
+
+.k-menu .k-item>.k-link {
+padding: 5px 10px !important;
+}
+
+.k-menu .k-group .k-item>.k-link input{
+	margin-right: 6px;
+}
+
+.k-state-selected {
+-webkit-box-shadow: 0 0 0 0;
+box-shadow: none 0 0 0 0;
+}
+
+.k-state-selected td a:link,  .k-state-selected td a:active,.k-state-selected td a:visited{
+color: #fff;
+}
+
+.k-state-hover td a:link,  .k-state-hover td a:active,.k-state-hover td a:visited,.k-state-hover td a:hover{
+color: #2f8dca !important;
+}
+
+.objectGridView .k-pager-sizes .k-dropdown .k-input{
+	font-size: 13px;
+}
+
+.objectGridView .k-pager-sizes .k-dropdown .k-select{
+	line-height: 2em;
+}

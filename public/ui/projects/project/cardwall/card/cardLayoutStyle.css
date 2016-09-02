@@ -1,0 +1,158 @@
+.card-cant-drop {
+	cursor: no-drop;
+}
+
+.deleted-card {
+	display: none !important;
+}
+
+.card-cant-drop::after {
+	font-weight: bold;
+	color: red;
+	content: 'Stories cannot be more than 5 levels deep';
+	vertical-align: middle;
+	text-align: center;
+	padding: 1em;
+	position: absolute;
+	white-space: normal;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+   	z-index: 99;
+   	border-radius: 5px;
+}
+
+.card-wall > .card-group {
+	white-space: nowrap;
+}
+
+.card-group:empty {
+	height: 30px !important;
+}
+
+.card-drop-assist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	cursor: move;
+	width: 300px;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 1em;
+	padding-left: 0;
+	padding-right: 0;
+	background-color: #eee;
+	border-radius: 5px;
+	border: 3px dashed #ccc;
+	height: 150px;
+	position: relative;
+}
+
+.card-drop-assist::after {
+	content: 'Drop Here';
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	line-height: 150px;
+	height: 150px;
+	top: 0;
+	left: 0;
+	color: #ccc;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.card-group,
+.card {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.card {
+	padding-left:  15px;
+	padding-right:  15px;
+	display: block;
+	cursor: move;
+	position: relative;
+}
+
+.card-flipped::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+ 	background: rgba(255, 255, 255, 0.9);
+}
+
+.card-front {
+	padding: 10px 0;
+}
+
+/* 1st level cards */
+.card-wall > .card-group > .card {
+	width: 300px;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 1em;
+	padding-left: 0;
+	padding-right: 0;
+	background-color: #3188AB;
+	border-radius: 5px;
+}
+
+.card-wall > .card-group > .card > .card-front {
+	padding: 10px 15px;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+/* 2nd level cards */
+.card-wall > .card-group > .card > .card-group:not(:empty) {
+	padding-top: 30px;
+}
+
+.card-wall > .card-group > .card > .card-group > .card {
+	background-color: #D9E2E8;
+	border-top: 2px solid #fff;
+	padding-bottom: 1px;
+}
+
+.card-wall > .card-group > .card > .card-group > .card:last-child {
+	border-bottom: 2px solid #fff;
+	margin-bottom: 1em;
+}
+
+.card-wall > .card-group > .card > .card-group > .card > .card-front {
+	font-weight: bold;
+	color: #3188AB;
+}
+
+/* 3rd level cards */
+.card-wall > .card-group > .card > .card-group > .card > .card-group > .card {
+	background-color: #fff;
+	border: 1px solid #A8C0CD;
+	margin-bottom: 10px;
+}
+
+/* 4th level cards */
+.card-wall > .card-group > .card > .card-group > .card > .card-group > .card > .card-group > .card {
+	background-color: #FFF1E2;
+	border: 1px solid #D5BE97;
+	margin-bottom: 10px;
+}
+
+/* 5th level cards */
+.card-wall > .card-group > .card > .card-group > .card > .card-group > .card > .card-group > .card > .card-group > .card {
+	background-color: #fff;
+	border: 1px solid #A8C0CD;
+	margin-bottom: 10px;
+}
+
+

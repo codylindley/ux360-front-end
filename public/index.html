@@ -1,0 +1,250 @@
+<!doctype html>
+
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UX360</title>
+
+	<!-- DON'T MOVE: errorception.com JS error reporting, see GitHub readme for more details. -->
+	<script>
+    (function(_,e,rr,s){_._errs=[s];var c=_.onerror;_.onerror=function() {var a=arguments;_errs.push(a);
+    c&&c.apply(this,a)};var b=function() {var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
+    c.src="//beacon.errorception.com/"+s+".js";c.async=!0;b.parentNode.insertBefore(c,b)};
+    _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
+    (window,document,"script","53975948d94d91e078000199");
+	</script>
+
+	<!--
+		HTML5 and `toISOString` support in IE8.
+	-->
+	<!--[if lt IE 9]>
+		<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script>
+			Date.prototype.toISOString||function() {function a(a) {var b=String(a);return 1===b.length&&(b="0"+b),b}Date.prototype.toISOString=function() {return this.getUTCFullYear()+"-"+a(this.getUTCMonth()+1)+"-"+a(this.getUTCDate())+"T"+a(this.getUTCHours())+":"+a(this.getUTCMinutes())+":"+a(this.getUTCSeconds())+"."+String((this.getUTCMilliseconds()/1e3).toFixed(3)).slice(2,5)+"Z"}}();
+		</script>
+	<![endif]-->
+
+</head>
+<body>
+
+<a id="isSrc" style="display:none"></a>
+
+<div data-view="ux360"></div>
+
+<script>
+(function(window, document, undefined) {
+	// Reference to <body>.
+	var body = document.body;
+
+	// IE detection. Necessary for IE10 and IE11.
+	(function() {
+		// IE document mode, if it exists.
+		var mode = document.documentMode;
+
+		body.className += ' not-IE';
+
+		function isIE() {
+			body.className = body.className.replace(/not\-IE/gi, '');
+		}
+
+		// IE10 and older.
+		/*@cc_on@*/
+		/*@
+			isIE();
+		@*/
+
+		// IE11.
+		if (mode === 11) {
+			isIE();
+		}
+	})();
+
+	// Get cookie function.
+	function getCookie(key) {
+  	return decodeURIComponent(
+  		document.cookie.replace(
+  			new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(key).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1"
+  		)
+  	) || null;
+	}
+
+	// Get app release version from cookie or use timestamp.
+	var v = getCookie('buildVersion') || new Date().getTime();
+
+	// When running from Node, the `pathToPublic` is the root.
+	var pathToPublic = '/';
+
+	// Alias to <head>. In modern browsers, use `document.head`.
+	var head = document.head || document.getElementsByTagName('head')[0];
+
+	// Alias to window.localStorage, for modern browsers.
+	var storage = window.localStorage ? window.localStorage : {};
+
+	// Reference to our mode button in the DOM.
+	var isSrc = document.getElementById('isSrc');
+
+	// Reference to window.location.
+	var location = window.location;
+
+	// Is this localhost?
+	var localhost = (function() {
+		var l = window.location;
+		var r = /personamodeler\.com|ux360\.com/gi;
+
+		// Not test or prod domains.
+		var host = !l.hostname.match(r);
+
+		// The correct port?
+		var port = l.port === '8081';
+
+		// Report result.
+		return host && port;
+	})();
+
+	// When running from Liferay (personalmodeler:8082 or ux360.com).
+	if (!localhost) {
+
+		// Then `pathToPublic` is this.
+		pathToPublic = '/UX360-theme/UX360/public/';
+
+		// Add this class so that paths in CSS are appropriately
+		// overridden to reflect the Liferay `pathToPublic`.
+		body.className = 'liferay';
+		window.IS_LIFERAY = true;
+	}
+
+	// Click event for the toggle.
+	isSrc.onclick = function() {
+		if (storage.isSrc) {
+			delete storage.isSrc;
+		}
+		else {
+			storage.isSrc = true;
+		}
+
+		// Passing `true` forces a new cache.
+		location.reload(true);
+	};
+
+	// Load CSS function.
+	function loadCSS(href, callback) {
+		// If not an absolute path.
+		if (!href.match(/\/\//gi)) {
+			href = pathToPublic + href;
+		}
+
+		var link = document.createElement('link');
+		link.setAttribute('rel', 'stylesheet');
+		link.setAttribute('media', 'screen');
+		link.setAttribute('href', href);
+
+		// Is there a callback?
+		if (callback) {
+			// Modern browser?
+			if (link.attachEvent) {
+			  link.attachEvent('onload', callback);
+			}
+			// IE fallback.
+			else if (link.addEventListener) {
+			  link.addEventListener('load', callback);
+			}
+		}
+
+		head.appendChild(link);
+	}
+
+	/* IMPORTANT putting this inline in page because IE fails with so many selectors in one file. */
+	/* Use cdn and hope it goes faster. Could inline this stuff for even faster...? */
+	loadCSS('bower_components/bootstrap/dist/css/bootstrap.min.css?v='+v);
+	loadCSS('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css', function() {
+
+		// Respond.js IE8 support of HTML5 elements and media queries used by Bootstrap.
+		if (document.addEventListener === undefined) {
+			var fixIE8MediaQueries = document.createElement('script');
+			fixIE8MediaQueries.setAttribute('src', 'https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js');
+			head.appendChild(fixIE8MediaQueries);
+		}
+	});
+
+	loadCSS('//cdn.kendostatic.com/2014.1.528/styles/kendo.common-bootstrap.min.css');
+	loadCSS('//cdn.kendostatic.com/2014.1.528/styles/kendo.bootstrap.min.css');
+
+	if (location.hostname === 'localhost' || location.port === '8081') {
+		isSrc.style.display = 'block';
+	}
+
+	// RequireJS script tag
+	var script = document.createElement('script');
+
+	// Used in conditional.
+	var logScript;
+
+	if (!storage.isSrc) {
+		// Production mode uses combined compressed files
+		// generated by the grunt build, i.e. almond.
+		loadCSS('ux360.min.css?v='+v);
+
+		// `almond/build` in grunt.js is adding the ux360start.js file to start the app.
+		script.setAttribute('src', pathToPublic + 'ux360.min.js?v='+v);
+		body.setAttribute('data-mode', 'build');
+		isSrc.innerHTML = 'build mode';
+		isSrc.title = 'Change to src mode';
+	}
+	else {
+		// In src mode make sure we can console.log in older browsers.
+		logScript = document.createElement('script');
+		logScript.setAttribute('src', pathToPublic + 'bower_components/consolelog/consolelog.min.js');
+		head.appendChild(logScript);
+
+		/*
+			Define the config object as the global variable `require` before require.js
+			is loaded, and have the values applied automatically. This example specifies
+			some dependencies to load as soon as require.js defines `require()`.
+		*/
+		window.require = {
+			// IMPORTANT! ux360Start is the module that initializes
+			// everything, after require loads, this starts the app.
+
+			// Load as soon as require.js is ready.
+			deps: [
+				pathToPublic + 'requireConfig.js',
+				pathToPublic + 'ux360Start.js?v='+v
+			],
+
+			// Either root (local), or sub-directory (LifeRay).
+			baseUrl: pathToPublic,
+
+			// We don't use `data-main` attribute.
+			skipDataMain: true,
+
+			// Call this once it's loaded.
+			callback: function() {
+				if (console) {
+					console.log('All require.js dependencies are loaded.');
+				}
+			}
+		};
+
+		// Development mode. Load everything individually.
+		body.setAttribute('data-mode', 'src');
+		isSrc.innerHTML = 'src mode';
+		isSrc.title = 'Change to build mode';
+
+		// RequireJS and config.
+		script.setAttribute('src', pathToPublic + 'bower_components/requirejs/require.js?v='+v);
+	}
+
+	// Append RequireJS or build JS file and watch the magic happen.
+	head.appendChild(script);
+
+// END: closure.
+})(this, this.document);
+</script>
+
+</body>
+</html>

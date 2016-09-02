@@ -1,0 +1,8 @@
+<h4>Personas</h4>
+
+{{#each .}}
+	<img class="peso-photo-xsmall" src="{{photo.cropped_path_small}}" data-toggle="tooltip" data-placement="right" title="{{peso_title}}" alt="{{peso_title}}" />
+{{/each}}
+{{#unless .}}
+<i style="color: #666;">(no personas associated with this story)</i>
+{{/unless}}

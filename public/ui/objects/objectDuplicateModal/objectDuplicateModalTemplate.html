@@ -1,0 +1,27 @@
+<form class="form-horizontal" role="form">
+
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h4 class="modal-title">Duplicate "{{decodeUrl Name}}"</h4>
+	</div>
+
+	<div class="modal-body">
+
+		<div class="form-group">
+			<label for="" class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="objName" value="">
+			</div>
+		</div>
+
+	</div>
+
+	<div class="modal-footer" style="text-align:left">
+
+			<button style="margin-left:10px;" class="btn btn-sm pull-right btn-primary ladda-button" data-spinner-color="#fff" data-style="zoom-out" type="button" id="duplicateObject" data-id="{{id}}" data-type="{{type}}"  data-parent-id="{{parentId}}"><span class="ladda-label">Duplicate</span></button>
+
+		<button class="btn btn-sm pull-right" data-dismiss="modal" type="button">Cancel</button>
+
+	</div>
+
+</form>

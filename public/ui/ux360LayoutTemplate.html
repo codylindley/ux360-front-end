@@ -1,0 +1,40 @@
+<header class="app-header">
+
+	<div class="pull-right">
+
+		<nav class="app-header-utility-nav">
+			<ul class="list-unstyled l-list-inline">
+				<li><a href="{{session.root}}/dashboard?settings=true">Settings</a>
+				<li><a target="help" href="/T7_PM_Next-theme/pm/resources/WebHelp/index.htm">Help</a>
+				<li><a href="{{session.root}}/support">Support</a>
+				<li><a href="{{session.root}}/search">Search</a>
+			</ul>
+		</nav>
+
+		<nav class="app-header-session-nav" style="margin-top: 5px;">
+			<ul class="list-unstyled l-list-inline">
+				<li>Welcome {{session.userName}}, {{session.groupName}}
+				<li><a href="{{session.sign_out_url}}">Log out</a>
+			</ul>
+		</nav>
+
+	</div>
+
+	<a href="{{session.root}}/dashboard" class="logo" title="TandemSeven Persona Modeler"></a>
+
+</header>
+<nav class="app-nav" style="overflow:hidden;padding: 5px 50px 0 50px;">
+	<ul class="list-unstyled curvy-tabs" style="height: 33px; overflow:hidden;">
+		{{#each session.navigation}}
+		<li class="{{className}}"><a href="{{../session.root}}/{{route}}">{{text}}</a>
+		{{/each}}
+	</ul>
+</nav>
+
+<iframe style="display:none;" name="upload" src="{{session.uploadURL}}"></iframe>
+
+<div data-view="content"></div>
+
+<footer class="footer">
+	&copy; 2013 TandemSeven. All rights reserved. Patent Pending.
+</footer>

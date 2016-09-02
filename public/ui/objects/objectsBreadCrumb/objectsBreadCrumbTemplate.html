@@ -1,0 +1,10 @@
+<ol class="breadcrumb" style="margin-bottom:0">
+  <li><a href="#" class="firstCrumbClick">{{type}}</a></li>
+	{{#each staticCrumb}}
+		{{#compare ../this/type '===' this.typeTitle}}
+			 <li><a href="{{../../liferayPath}}#objects/{{this.type}}/{{encodeUrl this.name}}/{{this.id}}">{{this.name}}</a></li>
+		{{else}}
+			  <li>{{this.name}}</li>
+		{{/compare}}
+	{{/each}}
+</ol>

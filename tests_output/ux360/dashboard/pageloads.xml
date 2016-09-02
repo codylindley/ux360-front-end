@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="pageloads"
+             errors="0"
+             failures="0"
+             tests="0">
+  
+  <testsuite errors="0" failures="0" hostname="" id=""
+    name="dashboard loads" package="pageloads" skipped="0"
+    tests="0" time="" timestamp="">
+    
+    
+    
+      <system-err>
+        Cannot call method &#39;resizeWindow&#39; of undefined
+      </system-err>
+    
+    </testsuite>
+  
+</testsuites>

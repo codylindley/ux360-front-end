@@ -1,0 +1,84 @@
+
+.has-agile-comments {
+	-webkit-animation: pulsate 2s ease-out;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulsate {
+	0% {
+		color: #B8B8B8;
+		box-shadow: none;
+	}
+	50% {
+		color: #F7941E;
+		box-shadow: 0 0 5px #F7941E;
+	}
+	100% {
+		color: #B8B8B8;
+		box-shadow: none;
+	}
+}
+
+.card-toolbar .glyphicon {
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.card-statusbar {
+	overflow: hidden;
+	padding: 5px 0 5px 15px;
+}
+
+.card .card .badge.pull-right {
+	display: none;
+}
+
+.badge .glyphicon {
+	margin-right: 5px;
+}
+
+.card-front .badge {
+	background-color: #E6E6E6;
+	color: #B8B8B8;
+	border-radius: 3px;
+}
+
+.card-front .btn-primary {
+	background-color: transparent;
+	border: none;
+}
+
+.card-front .card-header .glyphicon-plus {
+	visibility: hidden;
+	cursor: pointer;
+}
+
+.card-front .btn-primary:hover,
+.card-front .btn-primary:focus,
+.card-front .btn-primary:active,
+.card-front .btn-primary.active {
+  background-color: transparent;
+}
+
+.card .card .card .card .card .new-card {
+	display: none;
+}
+
+.card-header {
+	padding: 0 15px 0 15px;
+	margin-bottom: 2px;
+	white-space: normal;
+}
+
+.card-group .card .btn .caret {
+	border-top-color: #fff;
+}
+.card-group .card-group .card .btn .caret {
+	border-top-color: #3188AB;
+}
+
+.card-group .card-group .card .card-header {
+	background-color: transparent;
+	margin-bottom: 0;
+}
+

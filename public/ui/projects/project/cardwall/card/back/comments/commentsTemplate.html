@@ -1,0 +1,43 @@
+<h4>Comments</h4>
+
+<form class="form-comments">
+
+	<div class="col-sm-9">
+		<input type="text" class="form-control" id="uxcm_comment" name="uxcm_comment" placeholder="New Comment">
+	</div>
+	<div class="col-sm-3">
+		<button type="submit" class="btn btn-small btn-default">Add</button>
+	</div>
+
+</form>
+
+<br/>
+<br/>
+<br/>
+
+{{#if .}}
+
+	{{#each .}}
+	<div class="row">
+		<div class="col-sm-8">
+			<b>{{create_user}}:</b>
+			{{#if uxcm_importedfromagile}}
+			<br/><i style="font-size:11px;">(Imported Comment)</i>
+			 	<a style="font-size:11px;font-weight:bold;" href="#" data-uxcm_id="{{uxcm_id}}" class="acknowledge-comment">Ok</a>
+			{{/if}}
+			<br/><i style="color:#666;font-size:11px;">{{formatDate update_date}}</i>
+			<br/>{{uxcm_comment}}
+		</div>
+		<div class="col-sm-4">
+			<a href="#" data-uxcm_id="{{uxcm_id}}" class="delete-comment">Delete</a>
+		</div>
+	</div>
+	<br/>
+	{{/each}}
+
+
+{{else}}
+
+	<i style="color: #666;">(no comments)</i>
+
+{{/if}}

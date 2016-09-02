@@ -1,0 +1,69 @@
+.api-header {
+	margin: 0;
+	padding: 0 .5em;
+	line-height: 65px;
+	height: 65px;
+	border-bottom: 1px solid #ccc;
+}
+
+.api {
+	position: absolute;
+	top: 65px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.api-list {
+	position: absolute;
+	top: 65px;
+	left: 0;
+	width: 350px;
+	bottom: 0;
+	overflow: auto;
+	border-right: 1px solid #ccc;
+	padding: 0;
+	background: #eee;
+}
+
+.api-list h4 {
+	padding: .5em 1em;
+	margin: 0;
+}
+
+.api-list a {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 2px 0 2px 1.5em;
+	text-decoration: none;
+}
+
+.api-list .selected,
+.api-list a:active,
+.api-list a:focus,
+.api-list a:hover {
+	background-color: #ccc;
+}
+
+.method-list {
+	position: absolute;
+	top: 75px;
+	left: 350px;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+	padding: 0 1em;
+}
+
+.method {
+	padding-bottom: 50px;
+}
+
+.method-list td td {
+	border: none !important;
+}
+
+.method-list pre {
+	background: #fff
+}

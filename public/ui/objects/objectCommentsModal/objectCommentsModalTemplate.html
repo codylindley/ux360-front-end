@@ -1,0 +1,51 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+		&times;
+	</button>
+	<h4 class="modal-title">
+		Comments for "{{decodeUrl Name}}"
+	</h4>
+</div>
+
+<div class="modal-body">
+	<div style="overflow:auto; max-height:250px; padding-right:20px;" id="commentsList">
+  	{{#if comments.length}}
+			{{#each comments}}
+				<div class="qa-message-list">
+					<div class="message-item">
+						<div class="message-inner">
+							<div class="message-head clearfix">
+								<div class="user-detail">
+									<div class="post-meta">
+										<div class="asker-meta">
+											<span class="qa-message-what"></span>
+											<span class="qa-message-when">
+												<span class="qa-message-when-data">{{create_date}}</span>
+											</span>
+											<span class="qa-message-who">
+												<span class="qa-message-who-pad">by </span>
+												<span class="qa-message-who-data">{{create_user}}</span>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="qa-message-content">
+								{{uxcm_comment}}
+							</div>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		{{/if}}
+	</div>
+	<hr />
+ 	<form role="form">
+		<div class="form-group">
+			<textarea rows="3" maxlength="3500" class="form-control" id="objectDescriptionVal" name="prjt_description" placeholder="Enter a comment..."></textarea>
+		</div>
+	</form>
+	<button type="button" class="btn btn-primary btn-sm btn-block disabled ladda-button" data-spinner-color="#fff" data-style="zoom-out" disabled="disabled" id="addComment" data-id="{{id}}" data-type="{{type}}">
+		<span class="ladda-label">Add Comment</span>
+	</button>
+</div>

@@ -1,0 +1,16 @@
+
+.import-tasks-layout .row {
+	margin: 0;
+}
+
+.import-tasks-layout .col {
+	padding: 0;
+}
+
+.tasks-view {
+	padding: 0 20px;
+}
+
+.tasks-personas-panel-sets {
+	margin: 0 10px;
+}

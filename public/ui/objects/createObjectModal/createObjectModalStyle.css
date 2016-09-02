@@ -1,0 +1,66 @@
+#createObjectModalOr{
+	padding:6px 12px;
+}
+
+#createObjectModalSubCreateUI{
+	position: absolute;
+	top:-1000px;
+	background-color: #fff;
+	opacity: .8;
+	right:0;
+	width: 70%;
+	z-index: 2;
+	margin: 0 25px 0 30%;
+	border-bottom: 1px solid #E5E5E5;
+	border-left: 1px solid #E5E5E5;
+	border-right: 1px solid #E5E5E5;
+	-webkit-box-shadow: 0px 8px 8px -6px rgba(0,0,0,0.33);
+	-moz-box-shadow: 0px 8px 8px -6px rgba(0,0,0,0.33);
+	box-shadow: 0px 8px 8px -6px rgba(0,0,0,0.33);
+	height: 231px;
+}
+
+#subCreateUIpanel{
+	width:100%;
+	margin: 10px auto 0 auto;
+	padding: 1em 5em 2em 2em;
+		opacity:1;
+}
+
+.modal-scrollable .modal.fade.in{
+	overflow: hidden;
+}
+
+#removeObjectFromTree{
+	margin-right: 20px;
+}
+
+#showObjectModalSubCreateUI{
+	margin-right: 15px;
+}
+
+#createObjectBtn, #createObjectBtn:active{
+	margin-right:5px;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+#createObjectBtn, #createObjectBtn:active{
+	margin-right:5px;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+#hideObjectModalSubCreateUI, #hideObjectModalSubCreateUI:active{
+		margin-right:5px;
+}
+
+#arrangeTree.moveCursor span.k-in:hover{
+	cursor: move !important;
+}

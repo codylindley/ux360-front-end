@@ -1,0 +1,25 @@
+<table class="table table-bordered">
+	<tr>
+		<th>Name
+		<th>Description
+		<th>Last Modified
+		<th>Actions
+	</tr>
+	{{#each .}}
+	<tr data-prjt_id="{{prjt_id}}">
+		<td><a href="#projects/{{prjt_id}}">{{prjt_name}}</a>
+		<td>{{prjt_description}}{{#unless prjt_description}}<i style="color:#999;">(none)</i>{{/unless}}
+		<td>{{formatDate create_date}}
+		<td><div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle btn-small" data-toggle="dropdown">
+					Actions <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="#projects/{{prjt_id}}">View/Edit</a></li>
+					<li class="divider"></li>
+					<li><a href="#" class="delete-project">Delete</a></li>
+				</ul>
+			</div>
+	</tr>
+	{{/each}}
+</table>

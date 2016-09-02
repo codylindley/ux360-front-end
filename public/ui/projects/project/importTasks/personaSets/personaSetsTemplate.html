@@ -1,0 +1,8 @@
+<div class="list-group">
+	{{#each .}}
+	<a href="#" class="list-group-item {{#if isActive}}active{{/if}}" data-id="{{pest_id}}" style="overflow:hidden;text-overflow:ellipsis;">
+		<span class="badge">{{personaCount}}</span>
+		{{pest_name}}
+	</a>
+	{{/each}}
+</div>

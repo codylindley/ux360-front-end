@@ -1,0 +1,49 @@
+<div class="page-header">
+  <h5>Associations</h5>
+</div>
+
+<div class="panel-group" id="assAccordion" style="clear:both">
+	{{#each objectCount}}
+
+		<div class="panel panel-default">
+			<div class="panel-heading" data-toggle="collapse" data-parent="#assAccordion" data-target="#collapseAss{{@index}}">
+				<h3 class="panel-title">
+				<span class="badge">{{this.association_count}}</span> 
+					{{typeTitle}}
+				</h3>
+			</div>
+			<div id="collapseAss{{@index}}" class="panel-collapse collapse">
+			<div class="panel-body" data-required-object-type="{{type}}">
+
+			<div class="entry input-group">
+                        <input class="form-control" name="fields[]" type="text" placeholder="Enter A Name, Click + to add another {{typeTitle}} " />
+                    	<span class="input-group-btn">
+                            <button class="btn btn-add" type="button">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </span>
+                    </div>
+
+				<!--<div id="treeFilter">
+					<div class="input-group input-group-sm">
+					<input type="text" class="form-control">
+					<span class="input-group-btn">
+					<button class="btn btn-default filterTreeBtn" type="button">filter</button>
+					</span>
+					</div>
+				</div>
+
+				<div id="treeBtnOr">or, filter by text</div>-->
+
+				<div id="treeSort">
+					  <button type="button" class="hidden expandTreeBtn btn btn-default btn-xs">expand all</button>
+					  <button type="button" class="hidden collapseTreeBtn btn btn-default btn-xs">collapse all</button>
+					  <!--<button type="button" data-sort="desc" class="sortTreeBtn btn btn-default btn-sm ">sort <span class="glyphicon glyphicon-sort-by-attributes"> </span></button>-->
+				</div>
+
+				<div class="assTree" style="clear:both"></div>
+			</div>
+			</div>
+		</div>
+	{{/each}}
+</div>

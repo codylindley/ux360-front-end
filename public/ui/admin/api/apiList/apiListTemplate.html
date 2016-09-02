@@ -1,0 +1,68 @@
+
+<div class="api-list">
+{{#each .}}
+
+	<h4>{{name}}</h4>
+	<ul class="list-unstyled">
+
+	{{#each methods}}
+
+		<li><a href="#admin/api/{{id}}" data-api="{{id}}" title="{{name}}">{{name}}</a></li>
+
+	{{/each}}
+
+	</ul>
+
+{{/each}}
+</div>
+
+
+<div class="method-list">
+{{#each .}}
+
+	{{#each methods}}
+
+	<div id="admin/api/{{id}}" class="method">
+		<h4><span style="font-weight:normal;color:#666;">{{ ../name }} /</span> {{ name }}</h4>
+		<table class="table table-bordered table-hover">
+			<tr>
+				<td>serviceClassName
+				<td class="serviceClassName">{{ ../name }}
+			</tr>
+			<tr>
+				<td>serviceMethodName
+				<td class="serviceMethodName">{{ name }}
+			</tr>
+			<tr>
+				<td>serviceParameters
+				<td><table class="table-condensed serviceParameters">
+
+					{{#each parameterOrder}}
+
+						<tr>
+							<td>{{name}}
+							<td><input class="serviceParameter" name="{{name}}" value="{{value}}" />
+						</tr>
+
+					{{/each}}
+
+					</table>
+			</tr>
+			<tr>
+				<td><button type="button" class="btn ">Try It</button></td>
+				<td><div class="url"></div>
+					<br/>
+					<div class="pre"></div>
+				</td>
+			</tr>
+		</table>
+		<br/><br/>
+		<br/><br/>
+	</div>
+
+	{{/each}}
+
+
+{{/each}}
+</div>
+

@@ -1,0 +1,25 @@
+<div class="pull-right" style="margin-bottom: 1em;">
+	<button class="btn btn-small btn-default btn-save" type="button">Save</button>
+	<button class="btn btn-small btn-cancel" type="button">Cancel</button>
+</div>
+
+<table class="table tasks-table" style="clear:both;">
+
+	<thead>
+		<tr>
+			<th width="100%" style="position:relative;">Tasks and Scenarios
+			<th>
+			<th>Project Epics and User Stories
+		</tr>
+	</thead>
+
+	{{#each .}}
+		{{> taskTemplate}}
+	{{/each}}
+	{{#unless .}}
+	<tr>
+		<td colspan="3" style="text-align:center;font-style:italic;">(No Tasks)
+	</tr>
+	{{/unless}}
+
+</table>

@@ -1,0 +1,9 @@
+<tr class="task task-level-{{depth}} {{isVisible scen_id}}" data-scen_id="{{scen_id}}" data-parent-task="{{parentTask}}">
+	<td><span class="glyphicon {{taskToggleClass scen_id}} task-toggle"></span>
+		{{{scen_name}}}
+	<td><span class="glyphicon {{addOrDeleteUserstory Userstory}} task-convert" title="convert to userstory"></span>
+	<td>{{{formatUserstory Userstory}}}
+</tr>
+{{#each Tasks}}
+	{{> taskTemplate}}
+{{/each}}

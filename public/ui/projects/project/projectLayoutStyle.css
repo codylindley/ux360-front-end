@@ -1,0 +1,16 @@
+
+.project-title {
+	margin: 0 0.5em 0 0;
+	float: left;
+}
+
+.project-header {
+	 overflow: hidden;
+	 position: relative;
+	 border-bottom: 1px solid #ddd;
+}
+
+div[data-view="cardwallLayoutView"],
+div[data-view="importTasksLayoutView"] {
+	padding: 1em;
+}
